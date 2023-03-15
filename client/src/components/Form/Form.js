@@ -26,8 +26,17 @@ const Form = (currentId, setCurrentId ) => {
 
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    dispatch(createPost(postData));
 
+    // if (currentId === 0) {
+    //   dispatch(createPost(postData));
+    //   clear();
+    // } else {
+    //   dispatch(updatePost(currentId, postData));
+    //   clear();
+    // }
   };
 
   return (
