@@ -6,7 +6,7 @@ import FileBase from 'react-file-base64';
 import useStyles from './styles';
 import { createPost, updatePost } from '../../actions/posts';
 
-const Form = (currentId, setCurrentId ) => {
+const Form = ({currentId, setCurrentId} ) => {
   const [postData, setPostData] = useState({
     creator: "",
     title: "",
@@ -23,20 +23,20 @@ const Form = (currentId, setCurrentId ) => {
   }, [post]);
 
   const clear = () => {
-
+    setCurrentId(0);
+    setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(createPost(postData));
 
-    // if (currentId === 0) {
-    //   dispatch(createPost(postData));
-    //   clear();
-    // } else {
-    //   dispatch(updatePost(currentId, postData));
-    //   clear();
-    // }
+    if (currentId === 0) {
+      dispatch(createPost(postData));
+      clear();
+    } else {
+      dispatch(updatePost(currentId, postData));
+      clear();
+    }
   };
 
   return (
