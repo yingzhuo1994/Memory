@@ -73,7 +73,7 @@ const Form = ({currentId, setCurrentId} ) => {
           label="Message"
           fullWidth
           multiline
-          rows={4}
+          minRows={4}
           value={postData.message}
           onChange={(e) =>
             setPostData({ ...postData, message: e.target.value })
