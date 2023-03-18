@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 
 import postRoutes from "./routes/posts.js";
+import userRoutes from "./routes/user.js";
+
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -16,8 +18,9 @@ app.use(cors());
 app.get('/', (req, res) => {
     res.send('hello world')
   })
-app.use('/posts', postRoutes);
 
+app.use('/posts', postRoutes);
+app.use('/user', userRoutes);
 
 const CONNECTION_URL = process.env.DB_URL;
 const PORT = process.env.PORT || 5000;
