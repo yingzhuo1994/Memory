@@ -14,8 +14,8 @@ export const getPosts = async (req, res) => {
   
       const total = await PostMessage.countDocuments({});
       const posts = await PostMessage.find().sort({ _id: -1 }).limit(LIMIT).skip(startIndex);
-      console.log("total posts: ", total);
-      console.log("total pages: ", Math.ceil(total / LIMIT));
+      // console.log("total posts: ", total);
+      // console.log("total pages: ", Math.ceil(total / LIMIT));
 
       res.json({ data: posts, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT)});
   } catch (error) {    
@@ -24,17 +24,18 @@ export const getPosts = async (req, res) => {
 }
 
 
-export const getPost = async (req, res) => {
+export const getPost = async (req, res) => { 
   const { id } = req.params;
+  console.log("get Post: ", id);
 
   try {
-    const post = await PostMessage.findById(id);
-
-    res.status(200).json(post);
+      const post = await PostMessage.findById(id);
+      
+      res.status(200).json(post);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+      res.status(404).json({ message: error.message });
   }
-};
+}
 
 export const getPostsBySearch = async (req, res) => {
   const { searchQuery, tags } = req.query;
