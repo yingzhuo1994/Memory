@@ -6,7 +6,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import ChipInput from 'material-ui-chip-input';
 
 import Pagination from '../Pagination';
-import Posts from "../Posts/Posts";
+import Posts from "../Posts/Posts.js";
 import Form from "../Form/Form";
 import useStyles from './styles';
 
