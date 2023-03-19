@@ -40,10 +40,10 @@ const Form = ({currentId, setCurrentId} ) => {
     clear();
   };
   
-  console.log("currentId: ", currentId);
-  console.log("Form User");
-  console.log(user);
-  console.log(user?.result?.userName);
+  // console.log("currentId: ", currentId);
+  // console.log("Form User");
+  // console.log(user);
+  // console.log(user?.result?.userName);
 
   if (!user?.result?.userName) {
     return (<Paper className={classes.paper}>

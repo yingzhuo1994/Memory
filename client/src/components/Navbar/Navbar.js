@@ -17,9 +17,9 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log("test user");
-  console.log(user);
-  console.log("test userName")
+  // console.log("test user");
+  // console.log(user);
+  // console.log("test userName")
   // console.log(user.result.userName);
   // console.log(user.userName);
 

@@ -45,7 +45,7 @@ const Auth = () => {
       const decoded = jwt_decode(res.credential);
       const { name, picture, sub } = decoded;
 
-      console.log("Google info: ", decoded);
+      // console.log("Google info: ", decoded);
       
       const user = {
           _id: sub,
